@@ -1,7 +1,6 @@
 Line 1: #include <iostream> 	 ---> Header
 Line 2: #include <string> 	 ---> Header
-Line 3: define 	 ---> Identifier
-Line 3: MAX 	 ---> Identifier
+Line 3: #define MAX 6 	 ---> Pre-process Directives
 Line 5: using namespace std 	 ---> namespace
 Line 5: ; 	 ---> Separator
 Line 11: double 	 ---> Type
@@ -65,8 +64,7 @@ Line 20: < 	 ---> Operator
 Line 20: 5 	 ---> Integer
 Line 20: ; 	 ---> Separator
 Line 20: i 	 ---> Identifier
-Line 20: + 	 ---> Operator
-Line 20: + 	 ---> Operator
+Line 20: ++ 	 ---> Compund Operator
 Line 20: ) 	 ---> Separator
 Line 20: { 	 ---> Separator
 Line 21: if 	 ---> Keyword

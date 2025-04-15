@@ -26,7 +26,7 @@
 
 ^#include[ ]*<[a-zA-Z]+> { fprintf(outputfile, "Line %d: %s \t ---> Header\n", line, yytext); }
 
-^#define[ ]*<[a-zA-Z]+> { fprintf(outputfile,"Line %d: %s \t ---> Pre-process Directives\n", line, yytext); }
+#define[ ]*[a-zA-Z]*[ ]*[0-9]* { fprintf(outputfile,"Line %d: %s \t ---> Pre-process Directives\n", line, yytext); }
 
 ^"using namespace"[ a-zA-Z]+  { fprintf(outputfile,"Line %d: %s \t ---> namespace\n", line, yytext); }
 
