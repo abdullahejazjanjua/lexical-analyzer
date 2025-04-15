@@ -1,12 +1,11 @@
 #include <iostream>
-#include <string.h>
+using namespace std;
 
-
-using namespace std; 
-
-int main()
-{
-    char a = 'a';
-    string abc = "\n ";
-    return 0;   
+int main() {
+    float x = 3.14;
+    // This is a comment
+    if (x > 0) {
+        x = x + 1;
+    }
+    return 0;
 }
