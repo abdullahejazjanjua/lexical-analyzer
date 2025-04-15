@@ -1,0 +1,31 @@
+Line 1: #include <iostream> 	 ---> Header
+Line 2: using namespace std 	 ---> namespace
+Line 2: ; 	 ---> Separator
+Line 4: int 	 ---> Type
+Line 4: main 	 ---> Identifier
+Line 4: ( 	 ---> Separator
+Line 4: ) 	 ---> Separator
+Line 4: { 	 ---> Separator
+Line 5: float 	 ---> Type
+Line 5: x 	 ---> Identifier
+Line 5: = 	 ---> Operator
+Line 5: 3.14 	 ---> Float
+Line 5: ; 	 ---> Separator
+Line 7: if 	 ---> Keyword
+Line 7: ( 	 ---> Separator
+Line 7: x 	 ---> Identifier
+Line 7: > 	 ---> Operator
+Line 7: 0 	 ---> Integer
+Line 7: ) 	 ---> Separator
+Line 7: { 	 ---> Separator
+Line 8: x 	 ---> Identifier
+Line 8: = 	 ---> Operator
+Line 8: x 	 ---> Identifier
+Line 8: + 	 ---> Operator
+Line 8: 1 	 ---> Integer
+Line 8: ; 	 ---> Separator
+Line 9: } 	 ---> Separator
+Line 10: return 	 ---> Keyword
+Line 10: 0 	 ---> Integer
+Line 10: ; 	 ---> Separator
+Line 11: } 	 ---> Separator
