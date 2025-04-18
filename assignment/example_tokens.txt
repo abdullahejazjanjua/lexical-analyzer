@@ -1,8 +1,10 @@
 Line 1: #include <iostream> 	 ---> Header
-Line 2: using namespace std 	 ---> namespace
+Line 2: using 	 ---> Keyword
+Line 2: namespace 	 ---> Keyword
+Line 2: std 	 ---> Identifier
 Line 2: ; 	 ---> Separator
 Line 4: int 	 ---> Type
-Line 4: main 	 ---> Identifier
+Line 4: main 	 ---> Keyword
 Line 4: ( 	 ---> Separator
 Line 4: ) 	 ---> Separator
 Line 4: { 	 ---> Separator

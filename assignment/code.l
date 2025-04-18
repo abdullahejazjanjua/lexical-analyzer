@@ -24,20 +24,23 @@
               }
             }
 
-^#include[ ]*<[a-zA-Z]+> { fprintf(outputfile, "Line %d: %s \t ---> Header\n", line, yytext); }
+^#include[ \t]*<[^>]+>     { fprintf(outputfile, "Line %d: %s \t ---> Header\n", line, yytext); }
+^#include[ \t]*\"[^\"]+\"  { fprintf(outputfile, "Line %d: %s \t ---> Header\n", line, yytext); }
 
-#define[ ]*[a-zA-Z]*[ ]*[0-9]* { fprintf(outputfile,"Line %d: %s \t ---> Pre-process Directives\n", line, yytext); }
-
-^"using namespace"[ a-zA-Z]+  { fprintf(outputfile,"Line %d: %s \t ---> namespace\n", line, yytext); }
+^#define[ ]* { fprintf(outputfile,"Line %d: %s \t ---> Pre-process Directives\n", line, yytext); }
 
 
-int|float|char|double|void|bool { fprintf(outputfile,"Line %d: %s \t ---> Type\n", line, yytext); }
+int|float|char|double|void|bool|short|long|signed|unsigned|string { fprintf(outputfile,"Line %d: %s \t ---> Type\n", line, yytext); }
 
-if|else|while|for|return|cout { fprintf(outputfile,"Line %d: %s \t ---> Keyword\n", line, yytext); }
 
-"++"|"--"|"-="|"*="|"/=" { fprintf(outputfile,"Line %d: %s \t ---> Compund Operator\n", line, yytext); }
+if|else|while|for|do|switch|case|break|continue|return|goto|cout|cin|using|namespace|include|sizeof|struct|class|public|private|protected|virtual|static|const|new|delete|this|try|catch|throw|true|false|default|typedef|template|inline|friend|extern|enum|register|operator|mutable|volatile|nullptr|main|and|or|not { fprintf(outputfile,"Line %d: %s \t ---> Keyword\n", line, yytext); }
 
-"<<"|">>"|"<="|">="|"+"|"-"|"*"|"/"|"="|"<"|">"|"==" { fprintf(outputfile,"Line %d: %s \t ---> Operator\n", line, yytext); }
+
+"++"|"--"|"+="|"-="|"*="|"/="|"%="|"&="|"|="|"^="|"<<="|">>="|"&&"|"||" { fprintf(outputfile,"Line %d: %s \t ---> Compound Operator\n", line, yytext); }
+
+
+"<<"|">>"|"<="|">="|"+"|"-"|"*"|"/"|"="|"<"|">"|"=="|"!="|"%"|"!"|"&"|"|"|"^"|"~" { fprintf(outputfile,"Line %d: %s \t ---> Operator\n", line, yytext); }
+
 
 
 [{}();,\[\]]  { fprintf(outputfile,"Line %d: %s \t ---> Separator\n", line, yytext); }
@@ -90,7 +93,7 @@ int main()
     outputfile = fopen(ofilename, "w");
     if (!inputfile || !outputfile)
     {
-        fprintf(outputfile,"Could not open file\n");
+        printf("Could not open file\n");
         return 1;
     }
 
