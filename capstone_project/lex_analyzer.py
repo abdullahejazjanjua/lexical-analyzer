@@ -64,9 +64,8 @@ def parse(code, output_file):
                 line += 1
                 continue
 
-            out.write(f"Line: {line}, Kind: {kind}, Value: {value}\n")
+            out.write(f"Line: {line}, Token: {value} ----> {kind}\n")
 
-# Specify output filename
 output_filename = f"outputs/output_tokens_{extention[0]}.txt"
 parse(text, output_filename)
 print(f"Tokenized output written to {output_filename}")
